@@ -2,4 +2,4 @@
 ansible.log
 tmp/vault-pass
 *.log
-.vscode
+.vscode/*
