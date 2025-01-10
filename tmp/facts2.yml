@@ -1,0 +1,14 @@
+---
+- hosts: master
+  tasks:
+    - name: Print ansible_facts.* 표기법
+      ansible.builtin.debug:
+        msg: |
+          호스트명 : {{ ansible_facts.hostname }}
+          도메인 기반 호스트명 : {{ ansible_facts.fqdn }}
+          기본 IPv4 주소 : {{ ansible_facts.default_ipv4.address }}
+          네트워크 인터페이스 이름 목록 : {{ ansible_facts.interfaces }}
+          /dev/vda1 디스크 파티션 크기 : {{ ansible_facts.devices.vda.partitions.vda1.size }}
+          DNS 서버 목록 : {{ ansible_facts.dns.nameservers }}
+          현재 실행중인 커널 버전 : {{ ansible_facts.kernel }}
+          운영체제 종류 : {{ ansible_facts.distribution }}

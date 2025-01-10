@@ -1,0 +1,31 @@
+---
+- name: fact5 Playbook 실행
+  hosts: all_worker
+  become: true
+  tasks:
+    - name: Create /etc/ansible/facts.d dir
+      ansible.builtin.file:
+        path: /etc/ansible/facts.d
+        state: directory
+        mode: '0755'
+
+    - name: Create /etc/ansible/facts.d/custom.fact input
+      ansible.builtin.copy:
+        dest: /etc/ansible/facts.d/custom.fact
+        content: |
+          [packages]
+          web_package = httpd
+          db_package = mariadb-server
+
+          [users]
+          user1 = ansible
+          user2 = ubuntu
+
+        owner: root
+        group: root
+        mode: '0644'
+
+    - name: Print local facts
+      ansible.builtin.debug:
+        var: ansible_facts.ansible_local
+
