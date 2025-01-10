@@ -1,0 +1,21 @@
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [worker1]
+ok: [worker3]
+ok: [worker2]
+ok: [master]
+
+TASK [Restart ssh service] *****************************************************
+changed: [worker1]
+changed: [master]
+changed: [worker2]
+changed: [worker3]
+
+PLAY RECAP *********************************************************************
+master                     : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+worker1                    : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+worker2                    : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+worker3                    : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
