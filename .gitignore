@@ -1,2 +1,5 @@
-*.pem
-ssh_rsa.txt
+# logfile
+ansible.log
+tmp/vault-pass
+*.log
+.vscode

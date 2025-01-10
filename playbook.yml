@@ -1,5 +1,5 @@
 - hosts: all # origin all
-  become: yes
+  become: true
   vars_files:
     - secret_file_path.yml
   vars:
@@ -12,7 +12,7 @@
       include_tasks: roles/kubernetes/tasks/kubeadm_install.yml
 
 - hosts: masters
-  become: yes
+  become: true
   gather_facts: false
   vars_files:
     - secret_file_path.yml
@@ -26,7 +26,7 @@
       include_tasks: roles/kubernetes/tasks/worker_config.yml
 
 - hosts: masters
-  become: yes
+  become: true
   vars_files:
     - secret_file_path.yml
   vars:
