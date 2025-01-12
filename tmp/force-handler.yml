@@ -1,0 +1,21 @@
+---
+- hosts: masters
+  force_handlers: true
+
+  tasks:
+    - name: restart rsyslog
+      ansible.builtin.service:
+        name: "rsyslog"
+        state: restarted
+      notify:
+        - print msg
+
+    - name: install apache22
+      ansible.builtin.apt:
+        name: "apache22"
+        state: latest
+
+  handlers:
+    - name: print msg
+      ansible.builtin.debug:
+        msg: "rsyslog is restarted!"

@@ -1,0 +1,12 @@
+---
+- hosts: masters
+  tasks:
+    - name: Install apache22
+      ansible.builtin.apt:
+        name: apache22
+        state: latest
+      ignore_errors: true
+
+    - name: Print msg
+      ansible.builtin.debug:
+        msg: "Before task is ignored"

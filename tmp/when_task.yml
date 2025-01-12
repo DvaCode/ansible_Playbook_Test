@@ -1,0 +1,9 @@
+---
+- hosts: masters
+  vars:
+    run_my_task: false
+
+  tasks:
+    - name: echo msg
+      ansible.builtin.shell: "echo test"
+      when: run_my_task
