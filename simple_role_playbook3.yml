@@ -1,0 +1,10 @@
+---
+- hosts: masters
+  roles:
+    - role: simple-role
+      service_title: "Httpd Web"
+    - role: simple-role2
+  tasks:
+    - name: Print finish role play
+      ansible.builtin.debug:
+        msg: "Finish role play"

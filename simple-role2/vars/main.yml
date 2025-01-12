@@ -1,0 +1,5 @@
+---
+# vars file for simple-role2
+service_port:
+  - http
+  - https

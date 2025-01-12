@@ -1,0 +1,12 @@
+---
+- hosts: masters
+  tasks:
+    - name: Print start Play
+      ansible.builtin.debug:
+        msg: "Let's start role play"
+
+    - name: Install Service by role
+      ansible.builtin.import_role:
+        name: simple-role
+      vars:
+        service_title: Apache2

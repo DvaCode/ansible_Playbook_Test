@@ -1,0 +1,9 @@
+---
+- hosts: masters
+  roles:
+    - simple-role
+    - simple-role2
+  tasks:
+    - name: Print finish role play
+      ansible.builtin.debug:
+        msg: "Finish role play"
