@@ -7,11 +7,11 @@
     use_docker: false
   tasks:
     # 1. Kubernetes 서비스 중지 및 비활성화
-    # - name: Stop kubelet service
-    #   ansible.builtin.systemd:
-    #     name: kubelet
-    #     state: stopped
-    #     enabled: no
+    - name: Stop kubelet service
+      ansible.builtin.systemd:
+        name: kubelet
+        state: stopped
+        enabled: no
 
     - name: Stop Docker service (if using Docker)
       ansible.builtin.systemd:
