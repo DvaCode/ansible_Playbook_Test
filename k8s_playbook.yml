@@ -7,7 +7,7 @@
         msg: "Let's start role play"
 
   roles:
-    #- role: kubernetes
+    - role: kubernetes
     - role: nfs
       cluster_node_CIDR: 192.168.0.0/16
   
