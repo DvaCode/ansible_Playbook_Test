@@ -5,7 +5,7 @@
     name: "{{ item }}"
     state: latest
   loop: "{{ httpd_packages }}"
-  when: ansible_facts.distribution in supported_distros
+  when: ansible_facts.distribution in supported_distros and maseter
 
 - name: copy html file
   ansible.builtin.copy:
