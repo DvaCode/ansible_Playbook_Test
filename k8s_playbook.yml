@@ -5,12 +5,15 @@
     - name: Print Start role
       ansible.builtin.debug:
         msg: "Let's start role play"
-
   roles:
-    - role: kubernetes
+    - role: install_k8s
     - role: nfs
       cluster_node_CIDR: 192.168.0.0/16
-  
+
+- hosts: masters
+  become: true
+  roles:
+    - role: init_k8s
   tasks:
       # 검증 task
     - name: Verify Kubernetes deployment status

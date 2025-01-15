@@ -8,12 +8,12 @@ arch_mapping_var:
   #s390x: s390x
 
 packages:
-  tree
-  curl
-  gnupg2
-  software-properties-common
-  apt-transport-https
-  ca-certificates
+  - tree
+  - curl
+  - gnupg2
+  - software-properties-common
+  - apt-transport-https
+  - ca-certificates
 
 k8s_version: v1.32
 Calico_version: v3.28.1
