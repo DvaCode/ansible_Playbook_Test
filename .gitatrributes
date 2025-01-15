@@ -1,0 +1,3 @@
+# YAML 파일 지정
+*.yml linguist-language=YAML
+*.yaml linguist-language=YAML
