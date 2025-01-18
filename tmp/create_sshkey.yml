@@ -1,0 +1,28 @@
+---
+# tmp/create_sshkkey.yml
+- hosts: masters
+  tasks:
+    - name: Create ssh key
+      ansible.builtin.user:
+        name: "{{ userid }}"
+        generate_ssh_key: true
+        ssh_key_bits: 2048
+        ssh_key_file: /home/{{ userid }}/.ssh/id_rsa
+    - name: Read the public SSH Key
+      slurp:
+        src: /home/{{ userid }}/.ssh/id_rsa
+      register: public_key
+      become: yes
+
+    - name: Set public key as a fact
+      set_fact:
+        master_public_key: "{{ public_key.content | b64decode }}"
+      run_once: true
+
+- hosts: workers
+  tasks:
+    - name: Copy SSH Pub Key
+      ansible.posix.authorized_key:
+        user: "{{ userid }}"
+        state: present
+        key: "{{ lookup('file','/home/{{ userid }}/.ssh/id_rsa.pub') }}"

@@ -1,0 +1,7 @@
+---
+# roles/httpd/vars/main.yml
+
+httpd_service:
+  - httpd
+  - yum-utils
+repo_dir: /repo

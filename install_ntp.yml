@@ -1,0 +1,6 @@
+---
+# install_ntp.yml
+- hosts: masters
+  roles:
+    - role: ntp
+      ntp_server: 0.kr.pool.ntp.org

@@ -1,0 +1,4 @@
+---
+# ./roles/netplan/handlers/main.yml
+- name: Netplan apply
+  ansible.builtin.command: netplan apply

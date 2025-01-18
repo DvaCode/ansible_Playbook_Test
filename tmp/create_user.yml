@@ -1,0 +1,12 @@
+---
+# /tmp/create_user.yml
+- hosts: all
+  vars_files:
+    - vars/secret_chap09.yml
+  tasks:
+    - name: Create user
+      ansible.builtin.user:
+        name: "{{ item.userid }}"
+        password: "{{ item.userpw }}"
+        state: present
+      loop: "{{ user_info }}"

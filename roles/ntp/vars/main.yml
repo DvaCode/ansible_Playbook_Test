@@ -1,0 +1,8 @@
+---
+# roles/ntp/vars/main.yml
+
+package_name: chrony
+service_name: chronyd
+fedora_os:
+  - RedHat
+  - CentOS

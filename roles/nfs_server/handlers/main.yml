@@ -1,0 +1,13 @@
+#SPDX-License-Identifier: MIT-0
+---
+# ./roles/nfs_server/handlers/main.yml
+- name: Restart NFS Service
+  ansible.builtin.service:
+    name: nfs-server
+    state: restarted 
+
+- name: Reload firewalld
+  ansible.builtin.service:
+    name: firewalld
+    state: reloaded
+

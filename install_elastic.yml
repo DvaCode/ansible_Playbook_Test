@@ -1,0 +1,7 @@
+---
+# install_elastic.yml
+- hosts: elastic
+  roles:
+    - role: geerlingguy.java
+    - role: geerlingguy.elasticsearch
+    - role: geerlingguy.kibana

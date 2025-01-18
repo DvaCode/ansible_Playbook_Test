@@ -1,0 +1,5 @@
+--- 
+# vars_share_path.yml
+share_server: master
+share_path: /mnt/nfs_shares
+mount_path: /mnt/nfs_data
